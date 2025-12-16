@@ -7,7 +7,6 @@
   <title>Kilson Dev | Frontend Developer Júnior</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-  <title>Kilson Dev | Frontend Developer Júnior</title>
   <meta name="description"
     content="Portfólio de Kilson Dev, Frontend Developer Júnior. Projetos, artigos e habilidades em HTML, CSS e JavaScript.">
   <meta name="keywords" content="Frontend, Desenvolvedor Web, HTML, CSS, JavaScript, Portfólio, Kilson Dev">
@@ -29,145 +28,212 @@
     content="Portfólio de Kilson Dev, Frontend Developer Júnior. Projetos, artigos e habilidades em HTML, CSS e JavaScript.">
   <meta name="twitter:image" content="https://kilson-23.github.io/kilson-dev/fav.png">
 
+  <meta name="google-site-verification" content="google6fe95e03bc555a69.html">
 
-
-  <meta name="description"
-    content="Kilson Dev, Frontend Developer Júnior focado em HTML, CSS e JavaScript. Portfólio, projetos e artigos sobre desenvolvimento web.">
-  <meta name="keywords" content="Frontend Developer, HTML, CSS, JavaScript, Portfólio, Angola">
-  <meta name="author" content="Kilson Dev">
 
   <style>
+    /* --- Variáveis Globais para facilitar mudanças de cor --- */
+    :root {
+      --bg-body: #0f172a;       /* Fundo principal escuro */
+      --bg-card: #1e293b;       /* Fundo dos cartões (ligeiramente mais claro) */
+      --bg-header: #020617;     /* Fundo do cabeçalho/rodapé */
+      --text-main: #e5e7eb;     /* Cor do texto principal */
+      --text-muted: #94a3b8;    /* Cor do texto secundário */
+      --accent: #38bdf8;        /* Azul destaque (Cyan/Sky) */
+      --accent-hover: #0ea5e9;  /* Azul mais escuro para hover */
+      --border: #334155;        /* Cor das bordas subtis */
+    }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
     body {
-      background: #0f172a;
-      color: #e5e7eb;
+      background: var(--bg-body);
+      color: var(--text-main);
       line-height: 1.6;
     }
 
-    header {
+    /* --- Header & Footer --- */
+    header, footer {
+      background: var(--bg-header);
       padding: 60px 20px;
       text-align: center;
-      background: linear-gradient(135deg, #020617, #020617);
+      border-bottom: 1px solid var(--border);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      border-bottom: none;
+      margin-top: 60px;
     }
 
     header h1 {
       font-size: 2.5rem;
-      color: #38bdf8;
+      color: var(--accent);
+      margin-bottom: 10px;
     }
 
-    header p {
-      margin-top: 10px;
+    header p, footer p {
+      color: var(--text-muted);
       font-size: 1.1rem;
-      color: #cbd5f5;
     }
 
-    section {
-      padding: 60px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    section {
-      animation: fadeUp 0.8s ease both;
-    }
-
-    .project {
-      animation: fadeUp 1s ease both;
-    }
-
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-
-    .project:hover {
-      transform: translateY(-8px) scale(1.02);
-      box-shadow: 0 10px 25px rgba(56, 189, 248, 0.15);
-    }
-
-
-    h2 {
-      text-align: center;
-      margin-bottom: 40px;
-      color: #38bdf8;
-      font-size: 2rem;
-    }
-
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .project {
-      background: #020617;
-      padding: 20px;
-      border-radius: 10px;
-      border: 1px solid #1e293b;
-      transition: transform 0.3s ease;
-    }
-
-    .project:hover {
-      transform: translateY(-5px);
-    }
-
-    .project h3 {
-      margin-bottom: 10px;
-      color: #7dd3fc;
-    }
-
-    .project p {
-      font-size: 0.95rem;
-      color: #cbd5f5;
-    }
-
-    .project a {
-      display: inline-block;
-      margin-top: 10px;
-      color: #38bdf8;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .project a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      background: #020617;
-      padding: 40px 20px;
-      text-align: center;
-      border-top: 1px solid #1e293b;
-    }
-
-    footer p {
-      margin-bottom: 10px;
-      color: #94a3b8;
+    /* --- Links Sociais (Footer) --- */
+    .socials {
+      margin-top: 20px;
     }
 
     .socials a {
       margin: 0 10px;
-      color: #38bdf8;
+      color: var(--accent);
       text-decoration: none;
       font-weight: bold;
+      transition: color 0.3s;
     }
 
     .socials a:hover {
+      color: var(--text-main);
       text-decoration: underline;
+    }
+
+    /* --- Estrutura das Secções --- */
+    section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: var(--accent);
+      font-size: 2rem;
+    }
+
+    /* --- Grid Container para todos os cartões (O que faço, Projetos, Tecnologias) --- */
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    /* --- Cartões Genéricos (Texto) --- */
+    .card {
+      background: var(--bg-card);
+      padding: 25px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      border-color: var(--accent);
+    }
+
+    .card h3 {
+      margin-bottom: 15px;
+      color: var(--accent);
+      font-size: 1.2rem;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* --- Cartões de Projeto (Com Imagem) --- */
+    .project-card {
+      background: var(--bg-card);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+      border-color: var(--accent);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-bottom: 1px solid var(--border);
+      transition: transform 0.3s;
+    }
+
+    .project-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .project-info {
+      padding: 20px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .project-info h3 {
+      color: var(--text-main);
+      margin-bottom: 10px;
+      font-size: 1.25rem;
+    }
+
+    .project-info p {
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      font-size: 0.9rem;
+    }
+
+    /* Botão do Projeto */
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: transparent;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      border-radius: 6px;
+      text-decoration: none;
+      text-align: center;
+      font-weight: bold;
+      transition: all 0.3s;
+    }
+
+    .btn:hover {
+      background-color: var(--accent);
+      color: var(--bg-header); /* Texto escuro no fundo azul */
+    }
+
+
+    /* --- Animação Fade In (JavaScript) --- */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .fade-in.appear {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Estilo específico para a secção Objetivo (centralizar) */
+    .objective-text {
+      max-width: 700px;
+      margin: 20px auto;
+      text-align: center;
+      color: var(--text-main);
     }
   </style>
 </head>
@@ -184,18 +250,18 @@
   <section>
     <h2>O que eu faço</h2>
 
-    <div class="projects">
-      <div class="project">
+    <div class="grid-container">
+      <div class="card fade-in">
         <h3>Criação de Interfaces</h3>
         <p>Desenvolvimento de layouts modernos, limpos e responsivos focados na experiência do utilizador.</p>
       </div>
 
-      <div class="project">
+      <div class="card fade-in">
         <h3>Sites Responsivos</h3>
         <p>Páginas adaptadas para telemóvel, tablet e computador utilizando boas práticas de CSS.</p>
       </div>
 
-      <div class="project">
+      <div class="card fade-in">
         <h3>Projetos Práticos</h3>
         <p>Construção de projetos reais para estudo e portfólio aplicando HTML, CSS e JavaScript.</p>
       </div>
@@ -203,22 +269,36 @@
   </section>
 
 
-  <section>
-    <h2>Projetos</h2>
+  <section id="projetos">
+    <h2>Meus Projetos</h2>
 
-    <div class="projects">
-      <div class="project">
-        <h3>Landing Page Responsiva</h3>
-        <p>Página institucional com foco em design limpo e responsividade.</p>
-        <p><strong>Tecnologias:</strong> HTML, CSS</p>
-        <a href="#" target="_blank">Ver projeto</a>
+    <div class="grid-container">
+
+      <div class="project-card fade-in">
+        <img src="projeto1.png" alt="Landing Page Responsiva" />
+        <div class="project-info">
+          <h3>Landing Page Responsiva</h3>
+          <p>Página institucional com foco em design limpo e responsividade. Tecnologias: HTML, CSS</p>
+          <a href="#" class="btn" target="_blank">Ver Projeto</a>
+        </div>
       </div>
 
-      <div class="project">
-        <h3>Página de Login</h3>
-        <p>Interface de login moderna com validação básica.</p>
-        <p><strong>Tecnologias:</strong> HTML, CSS, JavaScript</p>
-        <a href="#" target="_blank">Ver projeto</a>
+      <div class="project-card fade-in">
+        <img src="projeto2.png" alt="Página de Login" />
+        <div class="project-info">
+          <h3>Página de Login</h3>
+          <p>Interface de login moderna com validação básica. Tecnologias: HTML, CSS, JavaScript</p>
+          <a href="#" class="btn" target="_blank">Ver Projeto</a>
+        </div>
+      </div>
+
+      <div class="project-card fade-in">
+        <img src="projeto3.png" alt="Projeto 3 (React)" />
+        <div class="project-info">
+          <h3>Projeto 3</h3>
+          <p>Descrição curta do projeto. Um clone simples de uma aplicação. Tecnologias: React, Tailwind</p>
+          <a href="projeto3.html" class="btn">Ver Projeto</a>
+        </div>
       </div>
     </div>
   </section>
@@ -227,8 +307,8 @@
   <section>
     <h2>Artigos & Conteúdo</h2>
 
-    <div class="projects">
-      <div class="project">
+    <div class="grid-container">
+      <div class="card fade-in">
         <h3>O que é HTML semântico e por que isso importa</h3>
         <p>
           HTML semântico utiliza tags que descrevem o significado do conteúdo,
@@ -236,7 +316,7 @@
         </p>
       </div>
 
-      <div class="project">
+      <div class="card fade-in">
         <h3>Como estou a aprender Frontend Developer do zero</h3>
         <p>
           Partilho a minha jornada de aprendizagem, desafios iniciais e
@@ -250,20 +330,20 @@
   <section>
     <h2>Tecnologias & Ferramentas</h2>
 
-    <div class="projects">
-      <div class="project">
+    <div class="grid-container">
+      <div class="card fade-in">
         <p>HTML5</p>
       </div>
-      <div class="project">
+      <div class="card fade-in">
         <p>CSS3</p>
       </div>
-      <div class="project">
+      <div class="card fade-in">
         <p>JavaScript</p>
       </div>
-      <div class="project">
+      <div class="card fade-in">
         <p>Git & GitHub</p>
       </div>
-      <div class="project">
+      <div class="card fade-in">
         <p>VS Code</p>
       </div>
     </div>
@@ -272,122 +352,12 @@
 
   <section>
     <h2>Objetivo Profissional</h2>
-    <p style="max-width:700px; margin:20px auto; text-align:center;">
+    <p class="objective-text fade-in">
       Crescer como Frontend Developer, aprofundar conhecimentos em JavaScript,
       design responsivo e boas práticas, contribuindo para projetos reais.
     </p>
   </section>
 
-
-
-  <section id="projetos" style="background-color: #0f172a; padding: 50px 0;">
-    <div style="text-align:center; margin-bottom:40px;">
-      <h2 style="font-size:2.5rem;">Meus Projetos</h2>
-      <p style="font-size:1.1rem; color:#555;">Confira alguns dos meus trabalhos recentes</p>
-    </div>
-
-    <div class="projetos-container">
-
-
-      <div class="card-projeto fade-in">
-        <img src="projeto1.png" alt="Projeto 1" />
-        <h3>Projeto 1</h3>
-        <p>Descrição curta do projeto. Tecnologias: HTML, CSS, JS</p>
-        <a href="projeto1.html" class="btn">Ver Mais</a>
-      </div>
-
-
-      <div class="card-projeto fade-in">
-        <img src="projeto2.png" alt="Projeto 2" />
-        <h3>Projeto 2</h3>
-        <p>Descrição curta do projeto. Tecnologias: PHP, MySQL</p>
-        <a href="projeto2.html" class="btn">Ver Mais</a>
-      </div>
-
-
-      <div class="card-projeto fade-in">
-        <img src="projeto3.png" alt="Projeto 3" />
-        <h3>Projeto 3</h3>
-        <p>Descrição curta do projeto. Tecnologias: React, Tailwind</p>
-        <a href="projeto3.html" class="btn">Ver Mais</a>
-      </div>
-
-    </div>
-  </section>
-
-
-  <style>
-    .projetos-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-    }
-
-    .card-projeto {
-      background-color: #1e293b;
-      border: 1px solid #334155;
-      color: #e5e7eb;
-      border-radius: 12px;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-      width: 300px;
-      text-align: center;
-      transform: translateY(30px);
-      opacity: 0;
-      transition: transform 0.6s ease, opacity 0.6s ease, box-shadow 0.3s;
-    }
-
-    .card-projeto img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      transition: transform 0.3s;
-    }
-
-    .card-projeto h3 {
-      margin: 15px 0 10px 0;
-      font-size: 1.5rem;
-      color: #38bdf8;
-    }
-
-    .card-projeto p {
-      color: #555;
-      padding: 0 15px 15px 15px;
-      font-size: 0.95rem;
-    }
-
-    .card-projeto .btn {
-      display: inline-block;
-      margin-bottom: 15px;
-      padding: 10px 20px;
-      background-color: #007BFF;
-      color: #fff;
-      border-radius: 6px;
-      text-decoration: none;
-      transition: background-color 0.5s;
-    }
-
-    .card-projeto:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
-      cursor: pointer;
-    }
-
-    .card-projeto:hover img {
-      transform: scale(1.05);
-    }
-
-    .card-projeto .btn:hover {
-      background-color: #0056b3;
-    }
-
-
-    .fade-in.appear {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  </style>
 
   <script>
     const faders = document.querySelectorAll('.fade-in');
